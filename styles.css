@@ -1,92 +1,487 @@
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UXO Dynamics</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
-<body>
-    <header>
-        <div class="logo-container">
-            <a href="index.html">
-                <img src="logo.png" alt="UXO Dynamics Logo" class="logo">
-            </a>
-        </div>
-        <nav id="floating-nav">
-            <div class="nav-logo">
-                <img src="logo.png" alt="UXO Dynamics Logo" class="nav-logo-img">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#hero" class="nav-item">Info</a></li>
-                <li><a href="#tjanster" class="nav-item">Elements</a></li>
-                <li><a href="#fardigheter" class="nav-item">Votes</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="intro">
-        <div class="intro-content">
-            <img src="anton.png" alt="Anton" class="intro-image">
-            <div class="intro-text">
-                <h1>Hi, I'm Anton — Digital Experience Manager</h1>
-                <p class="intro-subtext">
-                    I enjoy creating products from scratch and improving existing ones. In simple terms, I design 
-                    <span class="changing-text">web platforms</span> 
-                </p>
-                <div class="intro-buttons">
-                    <button class="contact-button">Let's talk</button>
-                    <div class="status-indicator">
-                        <span class="dot"></span>
-                        <span>Open for opportunities</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Välkommen till UXO Dynamics</h1>
-            <p>Vi erbjuder professionella tjänster för ditt företag</p>
-            <a href="#tjanster" class="btn">Läs mer</a>
-        </div>
-    </section>
-    <section id="tjanster">
-        <h2>Tjänster</h2>
-        <div class="service-container">
-            <div class="service">
-                <img src="service1.jpg" alt="Tjänst 1">
-                <h3>Tjänst 1</h3>
-                <p>Beskrivning av tjänst 1.</p>
-            </div>
-            <div class="service">
-                <img src="service2.jpg" alt="Tjänst 2">
-                <h3>Tjänst 2</h3>
-                <p>Beskrivning av tjänst 2.</p>
-            </div>
-            <div class="service">
-                <img src="service3.jpg" alt="Tjänst 3">
-                <h3>Tjänst 3</h3>
-                <p>Beskrivning av tjänst 3.</p>
-            </div>
-        </div>
-    </section>
-    <section id="fardigheter">
-        <h2>Färdigheter</h2>
-        <ul class="skills-list">
-            <li>Färdighet 1</li>
-            <li>Färdighet 2</li>
-            <li>Färdighet 3</li>
-        </ul>
-    </section>
-    <section id="kontakt">
-        <h2>Kontakt</h2>
-        <p>Kontakta oss via e-post: <a href="mailto:info@uxodynamics.com">info@uxodynamics.com</a></p>
-    </section>
-    <footer>
-        <p>&copy; 2024 UXO Dynamics. Alla rättigheter förbehållna.</p>
-    </footer>
-    <script src="scripts.js"></script>
-</body>
-</html>
+/* Basic styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: #3c3c3c;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+a {
+    color: #3c3c3c;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    margin: 0 0 10px;
+    color: #3c3c3c;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background: transparent; /* Make header transparent */
+    color: #3c3c3c;
+    padding: 20px 80px; /* Add margin similar to the example */
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding-left: 20%; /* Move the logo closer to the middle */
+}
+
+.logo {
+    height: 40px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links li a {
+    color: #3c3c3c;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #0070c9;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background: #3c3c3c;
+    margin: 4px 0;
+}
+
+/* Floating Navigation styles */
+#floating-nav {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #3c3c3c;
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+#floating-nav .nav-logo {
+    background: #1a1a1a;
+    padding: 5px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    height: 40px; /* Adjust the height to control the size of the logo container */
+    width: 40px;  /* Adjust the width to control the size of the logo container */
+}
+
+#floating-nav .nav-logo-img {
+    max-height: 100%; /* Ensure the logo fills the container height */
+    max-width: 100%;  /* Ensure the logo fills the container width while maintaining aspect ratio */
+}
+
+#floating-nav .nav-links {
+    display: flex;
+    margin: 0;
+}
+
+#floating-nav .nav-links li {
+    margin: 0 10px;
+}
+
+#floating-nav .nav-links li a {
+    font-size: 16px;
+    color: #e0e0e0;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background: #4a4a4a;
+    transition: background 0.3s, color 0.3s;
+}
+
+#floating-nav .nav-links li a:hover {
+    background: #5c5c5c;
+    color: white;
+}
+
+/* Intro section styles */
+#intro {
+    text-align: left; /* Left-align text */
+    display: flex;
+    justify-content: flex-start; /* Align the content to the left */
+    padding: 100px 80px; /* Add margin similar to the example */
+}
+
+.intro-content {
+    text-align: left; /* Left-align text */
+    max-width: 800px; /* Limit the width of the content */
+    padding-left: 20%; /* Add padding to bring content closer to the middle */
+}
+
+.intro-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: block;
+    margin-right: 20px; /* Add some space between the image and text */
+}
+
+.intro-text h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #333;
+}
+
+.intro-subtext {
+    font-size: 32px; /* Make the text almost as big as h1 */
+    font-weight: 700; /* Make the text bold */
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.changing-text {
+    font-size: 32px; /* Ensure the changing text matches the surrounding text size */
+    font-weight: 700; /* Ensure the changing text matches the surrounding text weight */
+    color: #0070c9; /* Add color to the changing text */
+    display: inline-block;
+    vertical-align: baseline; /* Align with the rest of the text */
+    opacity: 1;
+    transition: opacity 1s ease; /* Smooth transition for opacity */
+    position: relative;
+    top: 0; /* Adjust alignment */
+}
+
+.intro-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Left-align buttons */
+    gap: 10px;
+}
+
+.contact-button {
+    padding: 10px 20px;
+    background: #0070c9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-button:hover {
+    background: #005bb5;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #3c3c3c;
+}
+
+.status-indicator .dot {
+    height: 10px;
+    width: 10px;
+    background-color: #00ff00;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Glowing dot animation */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px #00ff00;
+    }
+    to {
+        box-shadow: 0 0 20px #00ff00;
+    }
+}
+
+/* Hero section styles */
+#hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden; /* Prevent horizontal scrolling */
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+#hero h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #3c3c3c;
+}
+
+#hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #3c3c3c;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #0070c9;
+    color: white;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background: #005bb5;
+}
+
+/* Section styles */
+section {
+    padding: 100px 80px; /* Add margin similar to the example */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #3c3c3c;
+}
+
+.service-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    flex: 1;
+    min-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.skills-list li {
+    background: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #3c3c3c;
+}
+
+.skills-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact section styles */
+#kontakt {
+    text-align: center;
+}
+
+#kontakt a {
+    color: #0070c9;
+    font-weight: bold;
+}
+
+/* Footer styles */
+footer {
+    background: #333333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: center;
+        padding: 20px 40px; /* Adjust padding for smaller screens */
+    }
+
+    .logo-container {
+        order: 1;
+    }
+
+    .hamburger {
+        display: flex;
+        order: 2;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    #intro {
+        padding: 100px 40px; /* Adjust padding for smaller screens */
+    }
+
+    #intro h1 {
+        font-size: 32px;
+    }
+
+    .intro-content {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .intro-image {
+        width: 150px;
+        height: 150px;
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Add bottom margin for spacing */
+    }
+
+    .intro-buttons {
+        flex-direction: column;
+        align-items: flex-start; /* Align buttons to the left */
+    }
+
+    #floating-nav {
+        flex-direction: column;
+        bottom: 10px;
+        width: 90%; /* Adjust width for mobile view */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #floating-nav .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #floating-nav .nav-links li {
+        margin: 10px 0;
+    }
+
+    #floating-nav .hamburger {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+
+    #intro {
+        padding: 100px 20px; /* Adjust padding for smaller screens */
+    }
+
+    #intro h1 {
+        font-size: 28px;
+    }
+
+    .intro-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .intro-buttons {
+        flex-direction: column;
+        align-items: flex-start; /* Align buttons to the left */
+    }
+
+    #floating-nav {
+        bottom: 10px;
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    #floating-nav .nav-links li {
+        margin: 5px 0;
+    }
+}
