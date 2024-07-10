@@ -157,12 +157,13 @@ nav {
 }
 
 .intro-image {
-    width: 200px;
-    height: 200px;
+     width: 150px;  /* Make the image smaller */
+    height: 150px; /* Ensure the aspect ratio remains square */
     border-radius: 50%;
-    margin-bottom: 20px;
+    margin-bottom: 40px; /* Add more padding from the bottom */
     display: block;
     margin-right: 20px; /* Add some space between the image and text */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 6px 6px rgba(0, 0, 0, 0.10); /* Add a shadow */
 }
 
 .intro-text h1 {
