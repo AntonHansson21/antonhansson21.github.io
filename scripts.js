@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     const changingText = document.querySelector('.changing-text');
-    const texts = ['web platforms', 'apps', 'websites'];
+    const texts = ['web platforms', 'apps', 'websites', 'landing pages'];
     let index = 0;
 
     function showNext() {
