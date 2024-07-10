@@ -3,35 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anton Hansson | Digital Designer </title>
+    <title>Anton Hansson | Digital Designer</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../UXP/src/styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="preloader">
         <div class="loader"></div>
     </div>
-    <header>
-        <div class="logo-container">
-            <a href="index.html">
-                <img src="logo.png" alt="UXO Dynamics Logo" class="logo">
-            </a>
-        </div>
-        <nav id="floating-nav">
-            <div class="nav-logo">
-                <img src="logo.png" alt="UXO Dynamics Logo" class="nav-logo-img">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#hero" class="nav-item">Info</a></li>
-                <li><a href="#tjanster" class="nav-item">Elements</a></li>
-                <li><a href="#fardigheter" class="nav-item">Votes</a></li>
-            </ul>
-        </nav>
-    </header>
+    
     <section id="intro">
         <div class="intro-content fade-in-delay">
-            <img src="anton.png" alt="Anton" class="intro-image">
+            <video class="intro-video" autoplay loop muted playsinline
+                style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 40px; display: block; margin-right: 20px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 6px 6px rgba(0, 0, 0, 0.10); object-fit: cover;">
+                <source src="anton.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <div class="intro-text">
                 <h1 class="fade-in">Hi, I'm Anton — Digital Experience Manager</h1>
                 <p class="intro-subtext fade-in-delay">
@@ -53,48 +41,53 @@
             <div class="floating-element" id="element3">User Experience</div>
         </div>
     </section>
-    <section id="hero">
-        <div class="hero-content fade-in-delay">
-            <h1></h1>
-            <p></p>
-            <a href="#tjanster" class="btn">Läs mer</a>
+    
+    <section id="latest-projects">
+        <div class="content">
+            <h2>Portfolio projects</h2>
+            <p>Every project is like a new little story:<br>unique starting points and tasks, but all with a happy end.</p>
+            <div class="project-container">
+                <div class="project-box">
+                    <img src="project1.jpg" alt="Project 1" class="project-image">
+                    <h3>Crypto, Web3 & NFT web platform</h3>
+                    <p>From scratch to MVP for the unicorn project.</p>
+                </div>
+                <div class="project-box">
+                    <img src="project2.jpg" alt="Project 2" class="project-image">
+                    <h3>Affiliate marketing analysis platform</h3>
+                    <p>Increased managers' efficiency.</p>
+                </div>
+                <div class="project-box">
+                    <img src="project3.jpg" alt="Project 3" class="project-image">
+                    <h3>Worldwide trading project</h3>
+                    <p>From 0 to 10M+ users globally.</p>
+                </div>
+                <div class="project-box">
+                    <img src="project4.jpg" alt="Project 4" class="project-image">
+                    <h3>Project 4</h3>
+                    <p>Description of Project 4.</p>
+                </div>
+            </div>
         </div>
     </section>
-    <section id="tjanster">
-        <h2 class="fade-in">Tjänster</h2>
-        <div class="service-container fade-in-delay">
-            <div class="service">
-                <img src="service1.jpg" alt="Tjänst 1">
-                <h3>Tjänst 1</h3>
-                <p>Beskrivning av tjänst 1.</p>
-            </div>
-            <div class="service">
-                <img src="service2.jpg" alt="Tjänst 2">
-                <h3>Tjänst 2</h3>
-                <p>Beskrivning av tjänst 2.</p>
-            </div>
-            <div class="service">
-                <img src="service3.jpg" alt="Tjänst 3">
-                <h3>Tjänst 3</h3>
-                <p>Beskrivning av tjänst 3.</p>
-            </div>
-        </div>
-    </section>
-    <section id="fardigheter">
-        <h2 class="fade-in">Färdigheter</h2>
-        <ul class="skills-list fade-in-delay">
-            <li>Färdighet 1</li>
-            <li>Färdighet 2</li>
-            <li>Färdighet 3</li>
-        </ul>
-    </section>
-    <section id="kontakt">
-        <h2 class="fade-in">Kontakt</h2>
-        <p class="fade-in-delay">Kontakta oss via e-post: <a href="mailto:info@uxodynamics.com">info@uxodynamics.com</a></p>
-    </section>
+    
     <footer>
         <p>&copy; 2024 UXO Dynamics. Alla rättigheter förbehållna.</p>
     </footer>
+    
+    <nav id="floating-nav">
+        <div class="nav-logo">
+            <a href="#intro">
+                <img src="logo.png" alt="UXO Dynamics Logo" class="nav-logo-img">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero" class="nav-item">Info</a></li>
+            <li><a href="#tjanster" class="nav-item">Elements</a></li>
+            <li><a href="#fardigheter" class="nav-item">Votes</a></li>
+        </ul>
+    </nav>
+    
     <script src="scripts.js"></script>
 </body>
 </html>
