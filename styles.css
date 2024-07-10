@@ -70,67 +70,6 @@ ul {
     }
 }
 
-/* Header styles */
-header {
-    background: transparent; /* Make header transparent */
-    color: #3c3c3c;
-    padding: 20px 80px; /* Add margin similar to the example */
-    position: absolute;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    padding-left: 20%; /* Move the logo closer to the middle */
-}
-
-.logo {
-    height: 40px;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links {
-    display: flex;
-}
-
-.nav-links li {
-    margin: 0 20px;
-}
-
-.nav-links li a {
-    color: #3c3c3c;
-    font-weight: 600;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-.nav-links li a:hover {
-    color: #0070c9;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger .line {
-    width: 25px;
-    height: 3px;
-    background: #3c3c3c;
-    margin: 4px 0;
-}
-
 /* Floating Navigation styles */
 #floating-nav {
     position: fixed;
@@ -155,13 +94,13 @@ nav {
     align-items: center;
     justify-content: center;
     margin-right: 15px;
-    height: 40px; /* Adjust the height to control the size of the logo container */
-    width: 40px;  /* Adjust the width to control the size of the logo container */
+    height: 40px;
+    width: 40px;
 }
 
 #floating-nav .nav-logo-img {
-    max-height: 100%; /* Ensure the logo fills the container height */
-    max-width: 100%;  /* Ensure the logo fills the container width while maintaining aspect ratio */
+    max-height: 100%;
+    max-width: 100%;
 }
 
 #floating-nav .nav-links {
@@ -190,26 +129,27 @@ nav {
 
 /* Intro section styles */
 #intro {
-    text-align: left; /* Left-align text */
+    text-align: left;
     display: flex;
-    justify-content: flex-start; /* Align the content to the left */
-    padding: 100px 80px; /* Add margin similar to the example */
+    justify-content: flex-start;
+    padding: 100px 80px;
 }
 
 .intro-content {
-    text-align: left; /* Left-align text */
-    max-width: 800px; /* Limit the width of the content */
-    padding-left: 20%; /* Add padding to bring content closer to the middle */
+    text-align: left;
+    max-width: 800px;
+    padding-left: 20%;
 }
 
-.intro-image {
-    width: 150px;  /* Make the image smaller */
-    height: 150px; /* Ensure the aspect ratio remains square */
+.intro-video {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    margin-bottom: 40px; /* Add more padding from the bottom */
+    margin-bottom: 40px;
     display: block;
-    margin-right: 20px; /* Add some space between the image and text */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 6px 6px rgba(0, 0, 0, 0.10); /* Add a shadow */
+    margin-right: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 6px 6px rgba(0, 0, 0, 0.10);
+    object-fit: cover;
 }
 
 .intro-text h1 {
@@ -220,28 +160,28 @@ nav {
 }
 
 .intro-subtext {
-    font-size: 32px; /* Make the text almost as big as h1 */
-    font-weight: 700; /* Make the text bold */
+    font-size: 32px;
+    font-weight: 700;
     margin-bottom: 20px;
     color: #333;
 }
 
 .changing-text {
-    font-size: 32px; /* Ensure the changing text matches the surrounding text size */
-    font-weight: 700; /* Ensure the changing text matches the surrounding text weight */
-    color: #0070c9; /* Add color to the changing text */
+    font-size: 32px;
+    font-weight: 700;
+    color: #0070c9;
     display: inline-block;
-    vertical-align: baseline; /* Align with the rest of the text */
+    vertical-align: baseline;
     opacity: 1;
-    transition: opacity 1s ease; /* Smooth transition for opacity */
+    transition: opacity 1s ease;
     position: relative;
-    top: 0; /* Adjust alignment */
+    top: 0;
 }
 
 .intro-buttons {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Left-align buttons */
+    justify-content: flex-start;
     gap: 10px;
 }
 
@@ -265,6 +205,7 @@ nav {
     align-items: center;
     font-size: 16px;
     color: #3c3c3c;
+    padding: 5px 10px;
 }
 
 .status-indicator .dot {
@@ -277,7 +218,6 @@ nav {
     animation: glow 1.5s infinite alternate;
 }
 
-/* Glowing dot animation */
 @keyframes glow {
     from {
         box-shadow: 0 0 5px #00ff00;
@@ -287,11 +227,79 @@ nav {
     }
 }
 
+/* Project Section */
+#latest-projects {
+    padding: 50px 40px;
+    text-align: left;
+}
+
+#latest-projects h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #3c3c3c;
+    margin-bottom: 10px;
+    padding-bottom: 0;
+}
+
+#latest-projects p {
+    font-size: 20px;
+    color: #5a5a5a;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.project-box {
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(50% - 40px);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.project-box h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project-box p {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .project-box {
+        flex: 1 1 calc(100% - 40px);
+    }
+}
+
 /* Floating elements */
 .floating-elements {
     position: relative;
     width: 100%;
-    height: 200px; /* Adjust the height as needed */
+    height: 200px;
 }
 
 .floating-element {
@@ -336,266 +344,3 @@ nav {
 @keyframes flyIn {
     from {
         transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-.floating-element:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-/* Hero section styles */
-#hero {
-    background: url('hero-image.jpg') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 0 20px;
-    position: relative;
-    overflow: hidden; /* Prevent horizontal scrolling */
-}
-
-.hero-content {
-    max-width: 800px;
-}
-
-#hero h1 {
-    font-size: 64px;
-    margin-bottom: 20px;
-    font-weight: 700;
-    color: #3c3c3c;
-}
-
-#hero p {
-    font-size: 24px;
-    margin-bottom: 30px;
-    color: #3c3c3c;
-}
-
-.btn {
-    display: inline-block;
-    padding: 15px 30px;
-    background: #0070c9;
-    color: white;
-    border-radius: 8px;
-    transition: background 0.3s ease;
-    font-size: 18px;
-}
-
-.btn:hover {
-    background: #005bb5;
-}
-
-/* Section styles */
-section {
-    padding: 100px 80px; /* Add margin similar to the example */
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 60px;
-    font-size: 36px;
-    font-weight: 700;
-    color: #3c3c3c;
-}
-
-.service-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.service {
-    background: white;
-    padding: 20px;
-    margin: 20px;
-    flex: 1;
-    min-width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.service:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.skills-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.skills-list li {
-    background: white;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #3c3c3c;
-}
-
-.skills-list li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Contact section styles */
-#kontakt {
-    text-align: center;
-}
-
-#kontakt a {
-    color: #0070c9;
-    font-weight: bold;
-}
-
-/* Footer styles */
-footer {
-    background: #333333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: center;
-        padding: 20px 40px; /* Adjust padding for smaller screens */
-    }
-
-    .logo-container {
-        order: 1;
-    }
-
-    .hamburger {
-        display: flex;
-        order: 2;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    nav ul {
-        justify-content: center;
-    }
-
-    #intro {
-        padding: 100px 40px; /* Adjust padding for smaller screens */
-    }
-
-    #intro h1 {
-        font-size: 32px;
-    }
-
-    .intro-content {
-        flex-direction: column;
-        align-items: flex-start; /* Align items to the left */
-    }
-
-    .intro-image {
-        width: 150px;
-        height: 150px;
-        margin-right: 0; /* Remove right margin */
-        margin-bottom: 20px; /* Add bottom margin for spacing */
-    }
-
-    .intro-buttons {
-        flex-direction: column;
-        align-items: flex-start; /* Align buttons to the left */
-    }
-
-    #floating-nav {
-        flex-direction: column;
-        bottom: 10px;
-        width: 90%; /* Adjust width for mobile view */
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    #floating-nav .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #floating-nav .nav-links li {
-        margin: 10px 0;
-    }
-
-    #floating-nav .hamburger {
-        display: flex;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 10px 20px; /* Adjust padding for smaller screens */
-    }
-
-    header h1 {
-        font-size: 20px;
-    }
-
-    nav ul li {
-        margin: 5px;
-    }
-
-    #intro {
-        padding: 100px 20px; /* Adjust padding for smaller screens */
-    }
-
-    #intro h1 {
-        font-size: 28px;
-    }
-
-    .intro-image {
-        width: 120px;
-        height: 120px;
-    }
-
-    .intro-buttons {
-        flex-direction: column;
-        align-items: flex-start; /* Align buttons to the left */
-    }
-
-    #floating-nav {
-        bottom: 10px;
-        width: 90%; /* Adjust width for smaller screens */
-    }
-
-    #floating-nav .nav-links li {
-        margin: 5px 0;
-    }
-}
