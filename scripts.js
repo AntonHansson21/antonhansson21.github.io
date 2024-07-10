@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Preloader
+    const preloader = document.querySelector('.preloader');
+    window.addEventListener('load', () => {
+        preloader.style.opacity = '0';
+        preloader.style.visibility = 'hidden';
+    });
+
+    // Animation for services
     const services = document.querySelectorAll('.service');
     services.forEach((service, index) => {
         service.style.opacity = 0;
@@ -8,8 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 100);
     });
 
+    // Changing text animation
     const changingText = document.querySelector('.changing-text');
-    const texts = ['web platforms', 'apps', 'websites', 'landing pages'];
+    const texts = ['web platforms', 'apps', 'websites'];
     let index = 0;
 
     function showNext() {
@@ -23,9 +32,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     showNext();
     setInterval(showNext, 4000); // Change text every 4 seconds (2 seconds fade-out, 2 seconds fade-in)
-});
 
-document.addEventListener("DOMContentLoaded", () => {
+    // Hamburger menu
     const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav-links");
 
