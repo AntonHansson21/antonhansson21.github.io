@@ -24,6 +24,52 @@ ul {
     padding: 0;
 }
 
+/* Preloader styles */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.loader {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #0070c9;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animation styles */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.fade-in-delay {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
 /* Header styles */
 header {
     background: transparent; /* Make header transparent */
@@ -157,7 +203,7 @@ nav {
 }
 
 .intro-image {
-     width: 150px;  /* Make the image smaller */
+    width: 150px;  /* Make the image smaller */
     height: 150px; /* Ensure the aspect ratio remains square */
     border-radius: 50%;
     margin-bottom: 40px; /* Add more padding from the bottom */
@@ -239,6 +285,73 @@ nav {
     to {
         box-shadow: 0 0 20px #00ff00;
     }
+}
+
+/* Floating elements */
+.floating-elements {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Adjust the height as needed */
+}
+
+.floating-element {
+    position: absolute;
+    background: #ffffff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+}
+
+#element1 {
+    top: 10%;
+    right: 5%;
+    background: #0070c9;
+    color: white;
+    animation: flyIn 1s ease forwards;
+    animation-delay: 1.2s;
+}
+
+#element2 {
+    top: 30%;
+    right: 2%;
+    background: #ff6f61;
+    color: white;
+    animation: flyIn 1s ease forwards;
+    animation-delay: 1.4s;
+}
+
+#element3 {
+    top: 60%;
+    right: 8%;
+    background: #6a1b9a;
+    color: white;
+    animation: flyIn 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+@keyframes flyIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.floating-element:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 /* Hero section styles */
