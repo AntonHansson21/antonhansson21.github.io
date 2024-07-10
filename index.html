@@ -9,6 +9,9 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
     <header>
         <div class="logo-container">
             <a href="index.html">
@@ -27,15 +30,15 @@
         </nav>
     </header>
     <section id="intro">
-        <div class="intro-content">
+        <div class="intro-content fade-in-delay">
             <img src="anton.png" alt="Anton" class="intro-image">
             <div class="intro-text">
-                <h1>Hi, I'm Anton — Digital Experience Manager</h1>
-                <p class="intro-subtext">
+                <h1 class="fade-in">Hi, I'm Anton — Digital Experience Manager</h1>
+                <p class="intro-subtext fade-in-delay">
                     I enjoy creating products from scratch and improving existing ones. In simple terms, I design 
                     <span class="changing-text">web platforms</span> 
                 </p>
-                <div class="intro-buttons">
+                <div class="intro-buttons fade-in-delay">
                     <button class="contact-button">Let's talk</button>
                     <div class="status-indicator">
                         <span class="dot"></span>
@@ -44,17 +47,22 @@
                 </div>
             </div>
         </div>
+        <div class="floating-elements fade-in-delay">
+            <div class="floating-element" id="element1">Interfaces & Graphics</div>
+            <div class="floating-element" id="element2">Analytics</div>
+            <div class="floating-element" id="element3">User Experience</div>
+        </div>
     </section>
     <section id="hero">
-        <div class="hero-content">
+        <div class="hero-content fade-in-delay">
             <h1>Välkommen till UXO Dynamics</h1>
             <p>Vi erbjuder professionella tjänster för ditt företag</p>
             <a href="#tjanster" class="btn">Läs mer</a>
         </div>
     </section>
     <section id="tjanster">
-        <h2>Tjänster</h2>
-        <div class="service-container">
+        <h2 class="fade-in">Tjänster</h2>
+        <div class="service-container fade-in-delay">
             <div class="service">
                 <img src="service1.jpg" alt="Tjänst 1">
                 <h3>Tjänst 1</h3>
@@ -73,16 +81,16 @@
         </div>
     </section>
     <section id="fardigheter">
-        <h2>Färdigheter</h2>
-        <ul class="skills-list">
+        <h2 class="fade-in">Färdigheter</h2>
+        <ul class="skills-list fade-in-delay">
             <li>Färdighet 1</li>
             <li>Färdighet 2</li>
             <li>Färdighet 3</li>
         </ul>
     </section>
     <section id="kontakt">
-        <h2>Kontakt</h2>
-        <p>Kontakta oss via e-post: <a href="mailto:info@uxodynamics.com">info@uxodynamics.com</a></p>
+        <h2 class="fade-in">Kontakt</h2>
+        <p class="fade-in-delay">Kontakta oss via e-post: <a href="mailto:info@uxodynamics.com">info@uxodynamics.com</a></p>
     </section>
     <footer>
         <p>&copy; 2024 UXO Dynamics. Alla rättigheter förbehållna.</p>
