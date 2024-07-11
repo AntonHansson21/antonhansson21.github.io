@@ -138,12 +138,12 @@ ul {
 
 .intro-content {
     text-align: left;
-    max-width: 800px;
+    max-width: 1450px; /* Increased width */
 }
 
 .intro-video {
-    width: 200px; /* Updated width */
-    height: 200px; /* Updated height */
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     margin-bottom: 40px;
     display: block;
@@ -161,14 +161,14 @@ ul {
 
 .intro-subtext {
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 400; /* Changed to regular */
     margin-bottom: 20px;
-    color: #333;
+    color: #737373; /* Changed color */
 }
 
 .changing-text {
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 400; /* Changed to regular */
     color: #0070c9;
     display: inline-block;
     vertical-align: baseline;
@@ -313,6 +313,10 @@ ul {
 
     .project-grid .project-box {
         grid-column: span 1;
+    }
+
+    #intro, #latest-projects, #hero {
+        padding: 50px 16px; /* 16px padding on mobile */
     }
 
     .floating-elements {
@@ -521,6 +525,10 @@ footer {
 
     .project-grid .project-box {
         grid-column: span 1;
+    }
+
+    #intro, #latest-projects, #hero {
+        padding: 50px 16px; /* 16px padding on mobile */
     }
 
     .floating-elements {
