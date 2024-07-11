@@ -87,26 +87,28 @@ ul {
     z-index: 1000;
 }
 
-#floating-nav .nav-logo {
-    background: #1a1a1a;
-    padding: 5px;
-    border-radius: 15px;
+.circle-button {
+    display: none; /* Hidden by default, shown on mobile */
+    width: 60px;
+    height: 60px;
+    background: #3c3c3c;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
-    height: 40px;
-    width: 40px;
+    cursor: pointer;
+    z-index: 1001;
 }
 
-#floating-nav .nav-logo-img {
-    max-height: 100%;
-    max-width: 100%;
+.circle-button img {
+    width: 40px;
+    height: 40px;
 }
 
 #floating-nav .nav-links {
     display: flex;
-    margin: 0;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #floating-nav .nav-links li {
@@ -126,6 +128,46 @@ ul {
 #floating-nav .nav-links li a:hover {
     background: #5c5c5c;
     color: white;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    #floating-nav {
+        background: none;
+        padding: 0;
+        box-shadow: none;
+        justify-content: center;
+    }
+
+    .circle-button {
+        display: flex;
+    }
+
+    #floating-nav .nav-links {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    #floating-nav .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #floating-nav .nav-links li {
+        margin: 10px 0;
+        transform: scale(0);
+        transition: transform 0.3s;
+    }
+
+    #floating-nav .nav-links li.active {
+        transform: scale(1);
+    }
 }
 
 /* Intro section styles */
@@ -168,7 +210,7 @@ ul {
 
 .changing-text {
     font-size: 32px;
-    font-weight: 400; /* Changed to regular */
+    font-weight: 600; /* Changed to regular */
     color: #0070c9;
     display: inline-block;
     vertical-align: baseline;
@@ -176,6 +218,11 @@ ul {
     transition: opacity 1s ease;
     position: relative;
     top: 0;
+    background: linear-gradient(90deg, rgba(255,94,0,1) 0%, rgba(255,153,0,1) 50%, rgba(255,209,0,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
 }
 
 .intro-buttons {
@@ -261,6 +308,7 @@ ul {
 }
 
 .project-box {
+    position: relative; /* Ensure the glare overlay is positioned correctly */
     background: #fff;
     color: #333;
     padding: 20px;
@@ -272,6 +320,7 @@ ul {
     align-items: center; /* Center content horizontally */
     justify-content: center; /* Center content vertically */
     text-align: center; /* Center text */
+    overflow: hidden; /* Ensure the glare effect stays within the box */
 }
 
 .project-box:hover {
@@ -519,19 +568,76 @@ footer {
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-    .project-grid {
-        grid-template-columns: 1fr;
+    #floating-nav {
+        background: none;
+        padding: 0;
+        box-shadow: none;
+        justify-content: center;
     }
 
-    .project-grid .project-box {
-        grid-column: span 1;
+    .circle-button {
+        display: flex;
     }
 
-    #intro, #latest-projects, #hero {
-        padding: 50px 16px; /* 16px padding on mobile */
+    #floating-nav .nav-links {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+        transform: translateY(-20px); /* Adjust this value to place items above the circle button */
+
     }
 
-    .floating-elements {
+    #floating-nav .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #floating-nav .nav-links li {
+        position: absolute;
+        transform: scale(0);
+        transition: transform 0.3s, top 0.3s, left 0.3s;
+    }
+    
+     #floating-nav .nav-links li:nth-child(1) {
+        top: -80px; /* Adjust this value to place the item above the circle button */
+        left: -65px;
+    }
+
+    #floating-nav .nav-links li:nth-child(2) {
+        top: -40px; /* Adjust this value to place the item to the left of the circle button */
+        left: 20px;
+    }
+
+    #floating-nav .nav-links li:nth-child(3) {
+        top: -40px; /* Adjust this value to place the item to the right of the circle button */
+        right: 20px;
+    }
+
+    #floating-nav .nav-links li.active {
+        transform: scale(1);
+    }
+    
+    #floating-nav .nav-links li a {
+        font-size: 16px;
+        color: #e0e0e0;
+        font-weight: 600;
+        padding: 10px 15px;
+        border-radius: 15px;
+        background: #4a4a4a;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    #floating-nav .nav-links li a:hover {
+        background: #5c5c5c;
+        color: white;
+    }
+
+    .nav-logo {
         display: none;
     }
 }
