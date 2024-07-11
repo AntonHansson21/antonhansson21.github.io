@@ -32,12 +32,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     showNext();
     setInterval(showNext, 4000); // Change text every 4 seconds (2 seconds fade-out, 2 seconds fade-in)
-
-    // Hamburger menu
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
-
-    hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
 });
