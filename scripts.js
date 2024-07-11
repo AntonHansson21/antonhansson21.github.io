@@ -40,4 +40,39 @@ document.addEventListener("DOMContentLoaded", function() {
     hamburger.addEventListener("click", () => {
         navLinks.classList.toggle("active");
     });
+
+    // Project card tilt effect
+    const projectBoxes = document.querySelectorAll('.project-box');
+
+    projectBoxes.forEach((box) => {
+        let timeout;
+        box.addEventListener('mousemove', (e) => {
+            const rect = box.getBoundingClientRect();
+            const x = e.clientX - rect.left; // x position within the element
+            const y = e.clientY - rect.top;  // y position within the element
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const deltaX = x - centerX;
+            const deltaY = y - centerY;
+
+            const percentX = deltaX / centerX;
+            const percentY = deltaY / centerY;
+
+            const rotateX = percentY * 30; // Adjusted value for more tilt
+            const rotateY = percentX * -30; // Adjusted value for more tilt
+
+            clearTimeout(timeout);
+            box.style.transition = 'transform 0.1s ease-out'; // Smooth transition
+            box.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        box.addEventListener('mouseleave', () => {
+            box.style.transition = 'transform 0.5s ease'; // Smooth transition back to initial state
+            timeout = setTimeout(() => {
+                box.style.transform = 'rotateX(0) rotateY(0)';
+            }, 100);
+        });
+    });
 });
