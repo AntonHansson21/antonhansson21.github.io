@@ -41,11 +41,14 @@ document.addEventListener("DOMContentLoaded", function() {
         navLinks.classList.toggle("active");
     });
 
-    // Project card tilt effect
+    // Project card tilt and glare effect
     const projectBoxes = document.querySelectorAll('.project-box');
 
     projectBoxes.forEach((box) => {
         let timeout;
+        const glare = box.querySelector('.glare');
+        let hasHovered = false; // Track if the box has been hovered
+
         box.addEventListener('mousemove', (e) => {
             const rect = box.getBoundingClientRect();
             const x = e.clientX - rect.left; // x position within the element
@@ -60,19 +63,36 @@ document.addEventListener("DOMContentLoaded", function() {
             const percentX = deltaX / centerX;
             const percentY = deltaY / centerY;
 
-            const rotateX = percentY * 30; // Adjusted value for more tilt
-            const rotateY = percentX * -30; // Adjusted value for more tilt
+            const rotateX = percentY * 20; // Adjusted value for more tilt
+            const rotateY = percentX * -20; // Adjusted value for more tilt
 
             clearTimeout(timeout);
             box.style.transition = 'transform 0.1s ease-out'; // Smooth transition
             box.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+            
         });
 
         box.addEventListener('mouseleave', () => {
             box.style.transition = 'transform 0.5s ease'; // Smooth transition back to initial state
             timeout = setTimeout(() => {
                 box.style.transform = 'rotateX(0) rotateY(0)';
-            }, 100);
+            }, 50);
+            glare.style.transform = 'rotate(45deg) translate(-50%, -50%)'; // Reset the glare position
+        });
+    });
+
+    // Floating navigation button
+    const circleButton = document.querySelector('.circle-button');
+    const navLinksMobile = document.querySelector('#floating-nav .nav-links');
+    const navItems = document.querySelectorAll('#floating-nav .nav-links li');
+
+    circleButton.addEventListener('click', () => {
+        navLinksMobile.classList.toggle('active');
+        navItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.toggle('active');
+            }, index * 100);
         });
     });
 });
