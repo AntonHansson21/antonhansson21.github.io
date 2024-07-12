@@ -314,12 +314,32 @@ ul {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    justify-content: center; /* Center content vertically */
-    text-align: center; /* Center text */
-    overflow: hidden; /* Ensure the glare effect stays within the box */
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
     height: 150px;
+}
+
+.project-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-text {
+    flex: 1;
+    text-align: left;
+}
+
+.project-logo {
+    flex: 0 0 50%;
+    text-align: center;
+}
+
+.project-logo img {
+    max-width: 100%;
+    height: auto;
 }
 
 .project-color1 {
@@ -331,11 +351,11 @@ ul {
 }
 
 .project-color3 {
-    background: #626ded;
+    background: #ffffff;
 }
 
 .text-color-black h3, .text-color-black p {
-    color: #000000;
+    color: #ffffff;
 }
 
 .text-color-white h3, .text-color-white p {
@@ -343,7 +363,7 @@ ul {
 }
 
 .text-color-yellow h3, .text-color-yellow p {
-    color: #ffff00;
+    color: #5353ff;
 }
 
 .project-box:hover {
