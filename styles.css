@@ -309,8 +309,6 @@ ul {
 
 .project-box {
     position: relative; /* Ensure the glare overlay is positioned correctly */
-    background: #fff;
-    color: #333;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -321,20 +319,36 @@ ul {
     justify-content: center; /* Center content vertically */
     text-align: center; /* Center text */
     overflow: hidden; /* Ensure the glare effect stays within the box */
+    height: 150px;
+}
+
+.project-color1 {
+    background: #5be97d;
+}
+
+.project-color2 {
+    background: #11d32c;
+}
+
+.project-color3 {
+    background: #626ded;
+}
+
+.text-color-black h3, .text-color-black p {
+    color: #000000;
+}
+
+.text-color-white h3, .text-color-white p {
+    color: #ffffff;
+}
+
+.text-color-yellow h3, .text-color-yellow p {
+    color: #ffff00;
 }
 
 .project-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.project-image {
-    width: 100%; /* Ensure images take full width of the container */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px;
-    margin-bottom: 15px;
-    object-fit: cover; /* Ensure the image covers the box */
-    max-height: 200px; /* Optional: set a maximum height for the images */
 }
 
 .project-box h3 {
