@@ -24,6 +24,103 @@ ul {
     padding: 0;
 }
 
+/* Timeline styles */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 40px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 4px;
+    background: #ddd;
+    z-index: -1;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 20px 0;
+    width: calc(50% - 16px); /* Adjust width to provide space */
+}
+
+.timeline-item:nth-child(odd) {
+    align-self: flex-start;
+    margin-right: 16px; /* Add margin to the right */
+}
+
+.timeline-item:nth-child(even) {
+    align-self: flex-end;
+    margin-left: 16px; /* Add margin to the left */
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 6px);
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: transparent; /* Make the dot transparent */
+}
+
+.timeline-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.timeline-content {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-role {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.timeline-company {
+    font-size: 16px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.timeline-date {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.timeline-description {
+    font-size: 14px;
+    color: #666;
+}
+
 /* Preloader styles */
 .preloader {
     position: fixed;
@@ -703,4 +800,23 @@ footer {
 
 .project-box h3.title-color-blue {
     color: #5353ff !important;
+}
+/* Mobile styles */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 5%;
+    }
+
+    .timeline-item {
+        width: 90%;
+    }
+
+    .timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
+        align-self: flex-start;
+    }
+
+    .timeline-item::before {
+        left: 0;
+        transform: translateX(0);
+    }
 }
