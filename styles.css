@@ -675,3 +675,30 @@ footer {
         display: none;
     }
 }
+
+
+/* Custom text color classes for project cards */
+.project-box p.text-color-black {
+    color: #ffffff !important;
+}
+
+.project-box p.text-color-white {
+    color: #ffffff !important;
+}
+
+.project-box p.text-color-yellow {
+    color: #5353ff !important;
+}
+
+/* Custom title color classes for project cards */
+.project-box h3.title-color-red {
+    color: #ffffff !important;
+}
+
+.project-box h3.title-color-green {
+    color: #ffffff !important;
+}
+
+.project-box h3.title-color-blue {
+    color: #5353ff !important;
+}
