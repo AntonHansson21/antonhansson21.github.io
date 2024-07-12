@@ -205,6 +205,7 @@ ul {
     font-size: 32px;
     font-weight: 400; /* Changed to regular */
     margin-bottom: 20px;
+    margin-top: 0px;
     color: #737373; /* Changed color */
 }
 
@@ -318,6 +319,7 @@ ul {
     text-align: center;
     overflow: hidden;
     height: 150px;
+    cursor: pointer; /* Add this line */
 }
 
 .project-content {
